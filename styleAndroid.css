@@ -1,0 +1,213 @@
+@charset "UTF-8";
+/*
+tons de verde do mais claro até o mais escuro
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('fontes/idroid.otf') format('opentype');
+}
+
+* { /*configurações globais, para todos os elementos da html (p, h1, h2,...)*/
+    margin: 0px;
+    padding: 0px;
+}
+
+:root { /*:root é uma pseudoclasse que serve para todo o documento, que é onde criamos as variáveis*/
+    /*variável em css --var: valor;
+      usando variáveis para cores e fontes abaixo*/
+    --cor0: #c5ebd6; 
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+body {
+    background-color: #c5ebd6;
+    font-family:var(--fonte-padrao);
+}
+
+a.externo::after {
+    content: '\1F517';
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); 
+    text-align: center;
+    min-height: 150px; 
+    padding-top: 40px;
+}
+
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.233);
+}
+
+header > h1 {
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.233);
+}
+
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.233);
+}
+
+nav > a {
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: .2s;
+}
+
+nav > a:hover {
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+
+main {
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto; /*centraliza */
+    margin-bottom: 30px; /*margin para afastar o main do footer*/
+    padding: 20px; /*espaçamento do conteúdo do main da borda*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418); /*sombra na box main*/
+    border-bottom-left-radius: 10px;/*apenas borda arredondada nas quinas de baixo bottom-left-right*/
+    border-bottom-right-radius: 10px;
+}
+
+main img { /*a imagem vai se ajustando com o aumento ou diminuição da tela*/
+    width: 100%;
+}
+
+main img.pequena {
+    max-width: 350px;
+    display: block; /*para a imagem ser tratada como block, e assim poder ser centralizada*/
+    margin: auto; /*para centralizar*/
+}
+
+main h1 {
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.6em;
+}
+
+main h2 {
+    color: var(--cor4);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 5px;
+}
+
+main p {
+    margin: 20px 0px;
+    text-align: justify;
+    text-indent: 30px; /*identação no começo do parágrafo*/
+    font-size: 1em;
+    line-height: 1.8em; /*espaçamento entre linhas*/
+}
+
+main strong {
+    color: var(--cor5);
+    font-weight: bold;
+}
+
+main a {
+    text-decoration: none;
+    background-color: var(--cor1);
+    padding: 2px 5px;
+    color: var(--cor5);
+    font-weight: bold;
+}
+
+main a:hover {
+    text-decoration: none;
+    color:var(--cor3);
+}
+
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 58%;
+    position: relative;
+
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.233);
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    margin: -10px;
+}
+
+aside > ul { /*configurar as listas que estão no aside*/
+    list-style-type: '\2714';/*código da marca check*/
+    list-style-position: inside; /*coloca o check das listas pra dentro do aside*/
+    columns: 2;
+}
+
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
